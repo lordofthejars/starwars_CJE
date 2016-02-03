@@ -43,6 +43,8 @@ node {
     gradle 'publish'
 }
 
+checkpoint 'Before Deploying'
+
 input message: "Deploy Application to QA ?"
 
 stage name: 'Deploy to QA', concurrency: 1
