@@ -15,14 +15,14 @@ parallel 'pmd' : {
     node {
         unstash 'source'
         gradle 'pmdMain'
-        step([$class: 'PmdPublisher', pattern: 'build/reports/pmd/*.xml'])
+        //step([$class: 'PmdPublisher', pattern: 'build/reports/pmd/*.xml'])
     }
 }, 'jacoco': {
     node {
         unstash 'source'
         unstash 'unitCodeCoverage'
         gradle 'jacocoTestReport'
-        publishHTML(target: [reportDir:'build/reports/jacoco/test/html', reportFiles: 'index.html', reportName: 'Code Coverage'])
+        //publishHTML(target: [reportDir:'build/reports/jacoco/test/html', reportFiles: 'index.html', reportName: 'Code Coverage'])
     }
 }
 
